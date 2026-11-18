@@ -3,20 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Правила - SubCoin</title>
+    <title>Онлайн-карта - SubCoin</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили именно для этой страницы */
+        .map-header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: radial-gradient(circle at center, rgba(57, 255, 20, 0.05) 0%, transparent 70%);
+            padding: 60px 20px;
+            border-radius: 20px;
+            width: 100%;
+        }
+
+        .map-header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: var(--text-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .map-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .map-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 80px 40px;
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .map-card p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Кнопка карты */
+        .btn-map {
+            display: inline-block;
+            background: #5c7cfa; /* Синий цвет как на скрине, можно заменить на градиент */
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px; /* Округлая кнопка */
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(92, 124, 250, 0.3);
+        }
+
+        .btn-map:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(92, 124, 250, 0.5);
+            background: #4c6ef5;
+        }
+        
+        /* Если хотите использовать наш градиент, раскомментируйте это: */
+        /*
+        .btn-map {
+            background: var(--gradient);
+            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.2);
+        }
+        .btn-map:hover {
+            box-shadow: 0 8px 25px rgba(57, 255, 20, 0.4);
+        }
+        */
+    </style>
 </head>
 <body>
+
+    <!-- Контейнер для снега -->
+    <div id="snow-container"></div>
+
+    <!-- Навигация -->
     <nav>
         <a href="index.html">Играть</a>
         <a href="donate.html">Донатик</a>
         <a href="map.html" class="active">Карта</a>
         <a href="rules.html">Правила</a>
     </nav>
-    <main class="page-content">
-        <h1>Правила Сервера</h1>
-        <p>Здесь скоро появится подробный свод правил для игроков сервера SubCoin.</p>
-        <a href="index.html" class="back-btn">Вернуться на главную</a>
-    </main>
+
+    <!-- Основной контент -->
+    <div class="container">
+        
+        <!-- Заголовок страницы -->
+        <header class="map-header">
+            <h1>Онлайн-карта</h1>
+            <p>Интерактивная карта мира SubCoin, обновляющаяся в реальном времени.</p>
+        </header>
+
+        <!-- Карточка с картой -->
+        <section class="map-card">
+            <h2>Карта пока не подключена.</h2>
+            <p>Скоро здесь появится интерактивная карта мира.</p>
+            <!-- Пока ставим заглушку (href="#"), потом сюда вставите ссылку на вашу карту BlueMap или Dynmap -->
+            <a href="#" class="btn-map">Открыть карту в новой вкладке</a>
+        </section>
+
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+        <a href="#" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
