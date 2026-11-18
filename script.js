@@ -39,7 +39,30 @@ function updateTimer() {
         secondsEl.innerText = seconds;
     }
 }
+/* Анимация подпрыгивания для кнопки */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
 
+.btn-play {
+    /* ... ваши существующие стили ... */
+    animation: bounce 3s infinite; /* Подпрыгивает каждые 3 секунды */
+}
+
+/* Убираем анимацию при наведении, чтобы кнопка не дергалась */
+.btn-play:hover {
+    animation: none;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
 // Запускаем таймер сразу и обновляем каждую секунду
 updateTimer();
 setInterval(updateTimer, 1000);
