@@ -1,0 +1,241 @@
+/* style.css */
+:root {
+    --bg-color: #0f0f13; /* Очень тёмный фон */
+    --card-bg: #1a1a22; /* Фон карточек */
+    --text-main: #ffffff;
+    --text-muted: #a0a0b0;
+    --accent-green: #39ff14; /* Яркий неоновый зелёный */
+    --accent-purple: #8a2be2; /* Глубокий фиолетовый */
+    --gradient: linear-gradient(135deg, var(--accent-green), var(--accent-purple));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Навигация */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: rgba(15, 15, 19, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-green);
+}
+
+/* Главный экран (Hero) */
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero .brand {
+    font-size: 4rem;
+    font-weight: 900;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.btn-play {
+    background: var(--gradient);
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+}
+
+.btn-play:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+/* Блок статистики */
+.stats-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.stats-container {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stats-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-block {
+    background: #252530;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 80px;
+}
+
+.time-block .num {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+}
+
+.time-block .label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Особенности */
+.features-section {
+    padding: 40px 20px 80px;
+    text-align: center;
+}
+
+.features-section h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.feature-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: var(--accent-green);
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Футер (иконки) */
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    background-color: var(--bg-color);
+}
+
+footer a {
+    color: var(--text-muted);
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--accent-green);
+}
+
+/* Страницы-заглушки */
+.page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.page-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-content p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    color: var(--accent-green);
+    text-decoration: none;
+    border: 1px solid var(--accent-green);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background: rgba(57, 255, 20, 0.1);
+}
