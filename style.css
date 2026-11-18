@@ -478,3 +478,167 @@ footer a:hover {
     line-height: 1.6;
     margin: 0;
 }
+/* --- НОВЫЕ СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ --- */
+
+/* Блок статуса сервера */
+.status-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 60px auto;
+}
+
+.status-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.status-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-info h2 i {
+    color: var(--accent-green);
+}
+
+.status-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.status-data {
+    display: flex;
+    gap: 30px;
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.status-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+.status-value.online {
+    color: var(--accent-green);
+}
+
+.ip-copy {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.ip-copy:hover {
+    color: var(--accent-purple);
+}
+
+/* Блок новостей */
+.news-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    text-align: center;
+}
+
+.news-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.news-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-green);
+}
+
+.news-date {
+    font-size: 0.8rem;
+    color: var(--accent-purple);
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.news-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.news-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    color: var(--accent-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s;
+}
+
+.read-more:hover {
+    gap: 10px;
+    color: var(--accent-purple);
+}
+
+/* Простая анимация появления для всех секций */
+.container > section, .container > header {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
