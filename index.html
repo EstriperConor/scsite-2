@@ -9,10 +9,8 @@
 </head>
 <body>
 
-    <!-- Контейнер для снега -->
     <div id="snow-container"></div>
 
-    <!-- Навигация -->
     <nav>
         <a href="index.html" class="active">Играть</a>
         <a href="donate.html">Донатик</a>
@@ -20,45 +18,30 @@
         <a href="rules.html">Правила</a>
     </nav>
 
-    <!-- Основной контент -->
     <div class="container">
         
-        <!-- Блок приветствия -->
         <header class="hero">
             <h1>Добро пожаловать на</h1>
             <div class="brand">SubCoin</div>
             <button class="btn-play" onclick="alert('Скоро здесь будет IP сервера!')">Играть сейчас</button>
         </header>
 
-        <!-- Блок со статистикой -->
         <section class="stats-section">
             <div class="stats-container">
                 <h2>С начала сезона прошло:</h2>
                 <div class="timer">
-                    <div class="time-block">
-                        <span class="num" id="days">0</span>
-                        <span class="label">дней</span>
-                    </div>
-                    <div class="time-block">
-                        <span class="num" id="hours">0</span>
-                        <span class="label">часов</span>
-                    </div>
-                    <div class="time-block">
-                        <span class="num" id="minutes">0</span>
-                        <span class="label">минут</span>
-                    </div>
-                    <div class="time-block">
-                        <span class="num" id="seconds">0</span>
-                        <span class="label">секунд</span>
-                    </div>
+                    <div class="time-block"><span class="num" id="days">0</span><span class="label">дней</span></div>
+                    <div class="time-block"><span class="num" id="hours">0</span><span class="label">часов</span></div>
+                    <div class="time-block"><span class="num" id="minutes">0</span><span class="label">минут</span></div>
+                    <div class="time-block"><span class="num" id="seconds">0</span><span class="label">секунд</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- Блок с особенностями -->
         <section class="features-section">
             <h2>Особенности Нашего Сервера</h2>
             <div class="features-grid">
+                <!-- Карточки особенностей (без изменений) -->
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-door-open"></i></div>
                     <h3>Доступность</h3>
@@ -82,9 +65,57 @@
             </div>
         </section>
 
+        <!-- НОВЫЙ БЛОК: Статус сервера -->
+        <section class="status-section">
+            <div class="status-card">
+                <div class="status-info">
+                    <h2><i class="fas fa-server"></i> Статус сервера</h2>
+                    <p>Присоединяйся к нам прямо сейчас!</p>
+                </div>
+                <div class="status-data">
+                    <div class="status-item">
+                        <span class="status-label">Онлайн</span>
+                        <span class="status-value online">0 / 100</span> <!-- Здесь можно потом сделать динамику -->
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Версия</span>
+                        <span class="status-value">1.20.4 - 1.21</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">IP</span>
+                        <span class="status-value ip-copy" onclick="copyIP()" title="Нажми, чтобы скопировать">play.subcoin.net <i class="far fa-copy"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- НОВЫЙ БЛОК: Новости -->
+        <section class="news-section">
+            <h2>Последние новости</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-date">15 Ноября 2026</div>
+                    <h3>Запуск нового сезона!</h3>
+                    <p>Мы рады сообщить о старте нового сезона с обновленным сюжетом и новыми механиками. Заходите скорее!</p>
+                    <a href="#" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">10 Ноября 2026</div>
+                    <h3>Обновление магазина</h3>
+                    <p>В нашем донат-магазине появились новые питомцы и косметические эффекты. Успейте оценить!</p>
+                    <a href="donate.html" class="read-more">В магазин <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">05 Ноября 2026</div>
+                    <h3>Ивент "Ночь Хэллоуина"</h3>
+                    <p>Спасибо всем, кто принял участие в нашем последнем ивенте. Скриншоты и итоги уже в Discord!</p>
+                    <a href="#" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <!-- Футер -->
     <footer>
         <a href="https://github.com/EstriperConor" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
         <a href="https://github.com/EstriperConor" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
