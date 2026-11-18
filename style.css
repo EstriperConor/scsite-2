@@ -641,3 +641,83 @@ footer a:hover {
         transform: translateY(0);
     }
 }
+/* --- Фоновые эффекты (Авроро и звезды) --- */
+
+.background-effects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Позади всего контента */
+    overflow: hidden;
+    pointer-events: none; /* Чтобы не мешать кликам */
+    background-color: var(--bg-color); /* Базовый фон */
+}
+
+/* Северное сияние */
+.aurora {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px); /* Сильное размытие для эффекта свечения */
+    opacity: 0.15; /* Делаем полупрозрачным, чтобы не мешало читать */
+    animation: auroraMove 20s infinite alternate ease-in-out;
+}
+
+.aurora-1 {
+    width: 60vw;
+    height: 60vh;
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle, var(--accent-green) 0%, transparent 70%);
+    animation-duration: 25s;
+}
+
+.aurora-2 {
+    width: 50vw;
+    height: 50vh;
+    bottom: -10%;
+    right: -10%;
+    background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+    animation-duration: 30s;
+    animation-delay: -5s; /* Сдвигаем анимацию */
+}
+
+/* Ключевые кадры для движения сияния */
+@keyframes auroraMove {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(10vw, 5vh) scale(1.1);
+    }
+    100% {
+        transform: translate(-5vw, 10vh) scale(0.9);
+    }
+}
+
+/* Мерцающие звезды (создаются через box-shadow) */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8) 50%, transparent 100%),
+        radial-gradient(1px 1px at 30% 50%, rgba(255,255,255,0.6) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 70% 30%, rgba(255,255,255,0.7) 50%, transparent 100%),
+        radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.5) 50%, transparent 100%),
+        radial-gradient(2px 2px at 50% 90%, rgba(255,255,255,0.4) 50%, transparent 100%),
+        radial-gradient(1px 1px at 15% 70%, rgba(255,255,255,0.6) 50%, transparent 100%);
+    background-repeat: repeat;
+    background-size: 300px 300px; /* Размер плитки со звездами */
+    animation: twinkle 4s infinite alternate;
+    opacity: 0.6;
+}
+
+/* Анимация мерцания */
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
