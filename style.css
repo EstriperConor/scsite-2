@@ -333,21 +333,18 @@ footer a:hover {
         transform: translateY(100vh);
     }
 }
-/* ... ваш код выше (root, body, nav и т.д.) ... */
 
-/* Контейнер для центрирования контента */
 .container {
-    max-width: 1200px; /* Максимальная ширина контента */
-    margin: 0 auto;    /* Центрирование по горизонтали */
-    padding: 40px 20px; /* Отступы сверху/снизу и по бокам */
+    max-width: 1200px; /* Ограничиваем ширину контента */
+    margin: 0 auto;    /* Центрируем по горизонтали */
+    padding: 40px 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем элементы внутри */
-    z-index: 1; /* Поверх снега */
+    align-items: center;
+    z-index: 1;
 }
 
-/* Главный экран (Hero) */
 .hero {
     text-align: center;
     margin-bottom: 60px;
