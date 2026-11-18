@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // Функция для копирования IP-адреса
 function copyIP() {
-    const ipText = "play.subcoin.net";
+    const ipText = "Скоро <3";
     navigator.clipboard.writeText(ipText).then(() => {
         // Можно добавить всплывающее уведомление, но пока просто alert
         alert('IP-адрес скопирован: ' + ipText);
