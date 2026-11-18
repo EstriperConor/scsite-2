@@ -43,21 +43,39 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
+    position: relative; /* Важно для позиционирования полосы */
+    padding-bottom: 5px; /* Немного места под текст для полосы */
+}
+
+/* Полоса, которая появляется при наведении */
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Толщина полосы */
+    background: var(--gradient); /* Градиент из зелёного в фиолетовый */
+    transform: scaleX(0); /* Изначально полоса сжата в 0 */
+    transform-origin: bottom right; /* Анимация справа налево */
+    transition: transform 0.3s ease-out;
+    border-radius: 2px;
+}
+
+/* Появление полосы при наведении */
+nav a:hover::after {
+    transform: scaleX(1); /* Полоса растягивается на всю ширину */
+    transform-origin: bottom left; /* Анимация слева направо */
+}
+
+/* Постоянная полоса для активной страницы */
+nav a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 nav a:hover {
     color: var(--accent-green);
-}
-
-/* Обертка для центрирования контента */
-.main-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 40px 20px;
-    z-index: 1; /* Контент поверх снега */
 }
 
 /* Главный экран (Hero) */
