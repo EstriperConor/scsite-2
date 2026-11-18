@@ -333,3 +333,59 @@ footer a:hover {
         transform: translateY(100vh);
     }
 }
+/* ... ваш код выше (root, body, nav и т.д.) ... */
+
+/* Контейнер для центрирования контента */
+.container {
+    max-width: 1200px; /* Максимальная ширина контента */
+    margin: 0 auto;    /* Центрирование по горизонтали */
+    padding: 40px 20px; /* Отступы сверху/снизу и по бокам */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем элементы внутри */
+    z-index: 1; /* Поверх снега */
+}
+
+/* Главный экран (Hero) */
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+    background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+/* ... стили для brand и btn-play остаются без изменений ... */
+
+/* Блок статистики */
+.stats-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+/* ... стили для stats-container и timer остаются без изменений ... */
+
+/* Блок с особенностями */
+.features-section {
+    width: 100%;
+    text-align: center;
+}
+
+.features-section h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    /* Автоматически подстраиваем колонки: минимум 250px, максимум 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* ... остальные стили для карточек и иконок остаются без изменений ... */
