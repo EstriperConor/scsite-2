@@ -629,7 +629,6 @@ footer a:hover {
     color: var(--accent-purple);
 }
 
-/* Простая анимация появления для всех секций */
 .container > section, .container > header {
     animation: fadeInUp 0.8s ease-out forwards;
     opacity: 0;
