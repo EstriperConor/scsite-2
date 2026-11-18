@@ -63,32 +63,6 @@ function updateTimer() {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
 }
-/* Стили для снега */
-#snow-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Чтобы снег не мешал кликать по кнопкам */
-    z-index: -1; /* Снег должен быть позади контента */
-    overflow: hidden;
-}
 
-.snowflake {
-    position: absolute;
-    top: -10px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1em;
-    user-select: none;
-    animation: fall linear forwards;
-    /* Разные снежинки будут иметь разную скорость и размер */
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(100vh); /* Падает вниз за пределы экрана */
-    }
-}
 updateTimer();
 setInterval(updateTimer, 1000);
