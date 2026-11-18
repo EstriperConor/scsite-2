@@ -47,3 +47,40 @@ function updateTimer() {
 // Запускаем таймер сразу и обновляем каждую секунду
 updateTimer();
 setInterval(updateTimer, 1000);
+// --- Эффект снега ---
+function createSnowflake() {
+    const snowContainer = document.getElementById('snow-container');
+    if (!snowContainer) return; // Если контейнера нет, выходим
+
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    
+    // Случайные символы для снежинок (звездочка, точка или снежинка)
+    const symbols = ['❅', '❆', '•', '*'];
+    snowflake.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+    
+    // Случайная позиция по горизонтали
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    
+    // Случайный размер шрифта
+    const size = Math.random() * 10 + 5; // от 5px до 15px
+    snowflake.style.fontSize = size + 'px';
+    
+    // Случайная продолжительность падения (от 5 до 15 секунд)
+    const duration = Math.random() * 10 + 5;
+    snowflake.style.animationDuration = duration + 's';
+    
+    // Случайная прозрачность
+    snowflake.style.opacity = Math.random() * 0.5 + 0.3;
+
+    // Добавляем снежинку на страницу
+    snowContainer.appendChild(snowflake);
+
+    // Удаляем снежинку после того, как она упадет, чтобы не засорять DOM
+    setTimeout(() => {
+        snowflake.remove();
+    }, duration * 1000);
+}
+
+// Создаем новую снежинку каждые 200 миллисекунд
+setInterval(createSnowflake, 200);
