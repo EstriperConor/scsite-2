@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ... (ваши существующие стили для шапки, вкладок, карточек и т.д. остаются без изменений) ... */
         .donate-header { text-align: center; margin-bottom: 40px; width: 100%; }
         .donate-header h1 { font-size: 3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--text-main); margin-bottom: 15px; }
         .donate-header p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 25px; }
@@ -18,7 +17,15 @@
         .tab-btn { background-color: transparent; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted); padding: 10px 25px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s; }
         .tab-btn:hover { border-color: var(--accent-green); color: var(--text-main); }
         .tab-btn.active { background-color: var(--accent-green); color: #000; border-color: var(--accent-green); font-weight: 700; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px; width: 100%; }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+            width: 100%;
+            max-width: 1000px;
+            justify-content: center;
+        }
         .product-card { background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
         .product-card:hover { border-color: var(--accent-purple); transform: translateY(-5px); }
         .product-card h3 { font-size: 1.2rem; margin-bottom: 10px; text-transform: uppercase; color: var(--text-main); }
@@ -77,13 +84,8 @@
             <button class="tab-btn" data-target="account">Аккаунт</button>
         </div>
 
-        <!-- Контент вкладок -->
-        
-        <!-- Вкладка "Все" (показывает всё сразу) -->
-               <!-- Вкладка "Все" (показывает всё сразу) -->
         <div class="tab-content active" id="all">
             <div class="products-grid">
-                <!-- Подписки -->
                 <div class="product-card">
                     <div class="product-icon"><i class="fas fa-crown" style="color: var(--accent-green);"></i></div>
                     <h3>SC Plus</h3>
@@ -109,7 +111,6 @@
                     <div class="product-bottom"><div class="price">3 190 <span>₽</span></div><button class="btn-buy">Купить</button></div>
                 </div>
 
-                <!-- Кастомизация (Питомцы) -->
                 <div class="product-card">
                     <div class="product-icon"><i class="fas fa-dog"></i></div>
                     <h3>Волчонок</h3>
@@ -141,7 +142,6 @@
                     <div class="product-bottom"><div class="price">1699 <span>₽</span></div><button class="btn-buy">Купить</button></div>
                 </div>
 
-                <!-- Косметика -->
                 <div class="product-card">
                     <div class="product-icon"><i class="fas fa-magic" style="color: #ff00ff;"></i></div>
                     <h3>Рандомные эффекты</h3>
@@ -185,7 +185,6 @@
                     <div class="product-bottom"><div class="price">699 <span>₽</span></div><button class="btn-buy">Купить</button></div>
                 </div>
 
-                <!-- Аккаунт -->
                 <div class="product-card">
                     <div class="product-icon"><i class="fas fa-signature"></i></div>
                     <h3>Кастомный никнейм</h3>
@@ -213,8 +212,7 @@
             </div>
         </div>
         </div>
-
-        <!-- Вкладка "Подписки" -->
+    
         <div class="tab-content" id="passes">
             <div class="products-grid">
                 <div class="product-card">
@@ -244,7 +242,6 @@
             </div>
         </div>
 
-        <!-- Вкладка "Кастомизация" (Питомцы) -->
         <div class="tab-content" id="custom">
             <div class="products-grid">
                 <div class="product-card">
@@ -280,7 +277,6 @@
             </div>
         </div>
 
-        <!-- Вкладка "Косметика" -->
         <div class="tab-content" id="cosmetics">
             <div class="products-grid">
                 <div class="product-card">
@@ -328,7 +324,6 @@
             </div>
         </div>
 
-        <!-- Вкладка "Аккаунт" -->
         <div class="tab-content" id="account">
             <div class="products-grid">
                 <div class="product-card">
@@ -358,7 +353,6 @@
             </div>
         </div>
 
-        <!-- Блок поддержки -->
         <div class="support-block">
             <div class="support-text">
                 <h3>Платите из-за границы или хотите просто поддержать проект?</h3>
@@ -367,7 +361,6 @@
             <button class="btn-support">Поддержать на Boosty</button>
         </div>
 
-        <!-- FAQ -->
         <section class="faq-section">
             <h2>Вопросы и ответы</h2>
             <div class="accordion">
@@ -396,10 +389,8 @@
 
     </div>
 
-    <!-- Подвал сайта -->
     <footer class="site-footer">
         <div class="footer-top">
-            <!-- Левая часть: Логотип и соцсети -->
             <div class="footer-left">
                 <div class="footer-logo">
                     <div class="logo-icon">S</div>
@@ -412,8 +403,7 @@
                     <a href="https://github.com/EstriperConor" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-
-            <!-- Правая часть: Ссылки и копирайт -->
+            
             <div class="footer-right">
                 <div class="footer-nav">
                     <a href="index.html">Главная</a>
@@ -435,21 +425,17 @@
 
     <script src="script.js"></script>
     <script>
-        // Логика для вкладок
         document.addEventListener('DOMContentLoaded', () => {
             const tabBtns = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('.tab-content');
 
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // 1. Убираем активный класс со всех кнопок и контента
                     tabBtns.forEach(b => b.classList.remove('active'));
                     tabContents.forEach(c => c.classList.remove('active'));
 
-                    // 2. Добавляем активный класс нажатой кнопке
                     btn.classList.add('active');
 
-                    // 3. Получаем ID нужного контента и показываем его
                     const target = btn.getAttribute('data-target');
                     const targetContent = document.getElementById(target);
                     
