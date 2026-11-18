@@ -1,8 +1,4 @@
-// script.js
 
-// Устанавливаем дату начала сезона (например, 1 июля 2026 года, 00:00:00)
-// Если вы хотите, чтобы сезон начался "сейчас", поставьте new Date().getTime()
-// Но для примера я ставлю фиксированную дату в прошлом, чтобы таймер сразу показывал дни.
 const START_DATE = new Date('2026-11-18T00:00:00').getTime(); 
 
 // Ключ для хранения в localStorage (если вдруг понадобится сбросить)
@@ -84,3 +80,25 @@ function createSnowflake() {
 
 // Создаем новую снежинку каждые 200 миллисекунд
 setInterval(createSnowflake, 200);
+// --- Логика для аккордеона (Правила) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            // Переключаем активный класс у заголовка (для поворота иконки)
+            header.classList.toggle('active');
+            
+            // Получаем следующий элемент (контент)
+            const content = header.nextElementSibling;
+
+            // Если контент открыт, закрываем его
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                // Иначе открываем, устанавливая max-height равной высоте контента
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    });
+});
